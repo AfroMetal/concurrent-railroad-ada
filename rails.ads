@@ -1,4 +1,3 @@
---with Ada.Text_IO;                use Ada.Text_IO;
 with Ada.Strings.Unbounded;
 
 package Rails is
@@ -27,6 +26,7 @@ package Rails is
         entry Lock;
         entry Unlock;
         function As_String return String;
+        function As_Verbose_String return String;
         function Action_Time(Train_Speed : Integer) return Float;
         procedure Init (I : in Integer; S : in Track_Record);
     private
@@ -42,6 +42,8 @@ package Rails is
     type Tracks_Ptr is access Tracks_Array;
 
     type Route_Array is new Tracks_Array;
+    function As_String(Self: Route_Array) return String;
+
     type Route_Ptr is access Route_Array;
 
     function New_Turntable(I : Integer; T : Integer) return Track_Ptr;
