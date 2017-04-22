@@ -236,7 +236,7 @@ begin
                 Connections (Second, First) := new Tracks_Array(0 .. 0);
                 Connections (Second, First) (0) := Normal_Tracks (I);
             else
-                Connections (First, First) := new Tracks_Array'(Connections (Second, First).all & Normal_Tracks (I));
+                Connections (Second, First) := new Tracks_Array'(Connections (Second, First).all & Normal_Tracks (I));
             end if;
         end;
     end loop;
@@ -270,7 +270,7 @@ begin
                 Connections (Second, First) := new Tracks_Array(0 .. 0);
                 Connections (Second, First) (0) := Station_Tracks (I);
             else
-                Connections (First, First) := new Tracks_Array'(Connections (Second, First).all & Station_Tracks (I));
+                Connections (Second, First) := new Tracks_Array'(Connections (Second, First).all & Station_Tracks (I));
             end if;
         end;
     end loop;
